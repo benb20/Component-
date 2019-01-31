@@ -1,0 +1,63 @@
+<html>
+    <head>
+    <script src="index.js" type="text/javascript"></script>
+    <script src="shape.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js" type = "text/javascript"></script>
+    
+    <style>
+        .slidecontainer {
+            width: 100%; /* Width of the outside container */
+            }
+
+        .slider {
+        -webkit-appearance: none;  /* Override default CSS styles */
+        appearance: none;
+        width: 15%; 
+        height: 20px; 
+        background: #0e0d0d; 
+        outline: none; 
+        opacity: 0.7; 
+        -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+        transition: opacity .2s;
+        }
+
+        .slider:hover {
+        opacity: 1; 
+        }
+
+    </style>
+
+    </head>
+  
+    <form>
+        <u>Example - Instructions</u> <br>
+        <ul>
+            <li>Check a checkbox to select a shape.<br></li>
+            <li>Press 'R' to reset the shapes.<br></li>
+            <li>Press 'M to switch between <br></li>
+            drawing and pause modes. <br>
+            <li>To apply a custom colour<br></li>
+            use the slider below and<br>
+            check 'Colour'.
+            <li>Change the friction of shapes by <br></li>
+            using the friction slider.
+        </ul>
+        <div class="colourbox">
+            <input type="checkbox" id="colourbox" onclick="checkTicked()"> Colour<br>
+        </div>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="255" value="50" class="slider" id="cslider" onchange="getCSlider(this.value);">
+        </div>    
+        <div class = "shapeboxes">
+            <input type="checkbox" id="elbox" onclick="checkTicked()"> Ellipse<br>
+            <input type="checkbox" id="sqbox" onclick="checkTicked()"> Square<br>
+            <input type="checkbox" id="tribox" onclick="checkTicked()"> Triangle<br>
+            <input type="checkbox" id="starbox" onclick="checkTicked()"> Star<br>
+        </div>
+        Friction Slider:
+        <div class="slidecontainer">
+            <input type="range" min="0" max="40" value="5" class="slider" id="fslider" onchange="getFSlider(this.value);">
+        </div> 
+    </form>
+</html>
